@@ -37,7 +37,7 @@ func (q Queue)Empty()bool{
 }
 func (q *Queue)Pop(){
 	if(q.Empty() == true){
-		panic("you are poping empty queue");
+		panic("cpp/pkg/types/c.go.Pop():you are poping empty queue");
 	}
 	if(q.head.next == nil){
 		q.head = nil;
@@ -49,7 +49,7 @@ func (q *Queue)Pop(){
 }
 func (q Queue)Front()interface{}{
 	if(q.Empty() == true){
-		panic("you getting first element from empty queue");
+		panic("cpp/pkg/types/c.go.Front():you getting first element from empty queue");
 	}
 	return q.head.data;
 }
