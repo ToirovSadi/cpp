@@ -1,0 +1,8 @@
+package types
+
+var(
+	INT_MAX int = 2147483647
+	INT_MIN int = (-INT_MAX - 1)
+	LLONG_MAX int64 = 9223372036854775807
+	LLONG_MIN int64 = (-LLONG_MAX - 1)
+)
