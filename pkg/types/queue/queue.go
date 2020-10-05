@@ -1,16 +1,16 @@
 package queue
 
-type Node struct{
-	next *Node
+type node struct{
+	next *node
 	data interface{}
 }
 type Queue struct{
-	head *Node
-	tail *Node
+	head *node
+	tail *node
 	size int
 }
 func (q *Queue)Push(v interface{}){
-	var newVal = new(Node);
+	var newVal = new(node);
 	newVal.next = nil;
 	newVal.data = v;
 	if(q.head == nil){
