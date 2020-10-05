@@ -90,7 +90,7 @@ func (s Stack)Empty()bool{
 }
 func (s *Stack)Pop(){
 	if(s.Empty() == true){
-		panic("cpp/pkg/types/queue.go.Pop(): you are poping empty queue");
+		panic("cpp/pkg/types/stack.go.Pop(): you are poping empty stack");
 	}
 	if(s.tail.prev == nil){
 		s.head = nil;
@@ -102,7 +102,7 @@ func (s *Stack)Pop(){
 }
 func (s Stack)Top()interface{}{
 	if(s.Empty() == true){
-		panic("cpp/pkg/types/queue.go.Front():you getting first element from empty queue");
+		panic("cpp/pkg/types/stack.go.Top():you getting first element from empty stack");
 	}
 	return s.tail.data;
 }
