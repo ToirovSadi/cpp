@@ -1,4 +1,4 @@
 .vscode
 .gitignore
 go.mod
-cmd/main
+cmd/main/main.go
