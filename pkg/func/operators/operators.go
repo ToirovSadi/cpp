@@ -38,7 +38,7 @@ func Add(a *interface{}, b interface{}){
 		case float64:
 			*a = (*a).(float64) + b.(float64);
 		default:
-			panic("Add(): can't sum a and b");
+			panic("Add(): can't get a + b");
 	}
 
 }
@@ -71,11 +71,11 @@ func Sub(a *interface{}, b interface{}){
 		case uint:
 			*a = (*a).(uint) - b.(uint);
 		case float32:
-			*a = (*a).(float32) + b.(float32);
+			*a = (*a).(float32) - b.(float32);
 		case float64:
-			*a = (*a).(float64) + b.(float64);
+			*a = (*a).(float64) - b.(float64);
 		default:
-			panic("Sub(): can't sum a and b");
+			panic("Sub(): can't get a - b");
 	}
 
 }
@@ -112,7 +112,7 @@ func Mult(a *interface{}, b interface{}){
 		case float64:
 			*a = (*a).(float64) * b.(float64);
 		default:
-			panic("Mult(): can't sum a and b");
+			panic("Mult(): can't get a * b");
 	}
 }
 // a / b
@@ -148,7 +148,7 @@ func Del(a *interface{}, b interface{}){
 		case float64:
 			*a = (*a).(float64) / b.(float64);
 		default:
-			panic("Del(): can't sum a and b");
+			panic("Del(): can't get a / b");
 	}
 }
 // a % b
@@ -180,7 +180,7 @@ func Mod(a *interface{}, b interface{}){
 		case uint:
 			*a = (*a).(uint) % b.(uint);
 		default:
-			panic("Mod(): can't sum a and b");
+			panic("Mod(): can't get a % b");
 	}
 }
 // a ^ b
@@ -212,7 +212,7 @@ func Xor(a *interface{}, b interface{}){
 		case uint:
 			*a = (*a).(uint) ^ b.(uint);
 		default:
-			panic("Xor(): can't sum a and b");
+			panic("Xor(): can't get a ^ b");
 	}
 }
 // a | b
@@ -244,7 +244,7 @@ func Or(a *interface{}, b interface{}){
 		case uint:
 			*a = (*a).(uint) | b.(uint);
 		default:
-			panic("Or(): can't sum a and b");
+			panic("Or(): can't get a | b");
 	}
 }
 // a & b
@@ -276,6 +276,6 @@ func And(a *interface{}, b interface{}){
 		case uint:
 			*a = (*a).(uint) & b.(uint);
 		default:
-			panic("And(): can't sum a and b");
+			panic("And(): can't get a & b");
 	}
 }
