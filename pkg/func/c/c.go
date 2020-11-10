@@ -13,7 +13,7 @@ func Assert(cond bool, err string){
 		for i := 0; i < len(res); i ++{
 			fmt.Print("*");
 		}
-		fmt.Print("\n\n" + res + "\n\n");
+		fmt.Print("\n*\n" + res + "\n*\n");
 		for i := 0; i < len(res); i ++{
 			fmt.Print("*");
 		}
@@ -151,7 +151,6 @@ func Add(a *interface{}, b interface{}){
 		default:
 			panic("Add(): can't get a + b");
 	}
-
 }
 // a - b
 func Sub(a *interface{}, b interface{}){
@@ -389,6 +388,94 @@ func And(a *interface{}, b interface{}){
 		default:
 			panic("And(): can't get a & b");
 	}
+}
+// compare a < b
+func IsLess(a interface{}, b interface{})bool{
+	typeOfA := fmt.Sprintf("%T", a);
+	typeOfB := fmt.Sprintf("%T", b);
+	if(typeOfA != typeOfB){
+		panic("IsLess(): types of a and b must be same");
+	}
+	switch (a).(type){
+		case int8:
+			return (a.(int8) < b.(int8));
+		case int16:
+			return (a.(int16) < b.(int16));
+		case int32:
+			return (a.(int32) < b.(int32));
+		case int64:
+			return (a.(int64) < b.(int64));
+		case uint8:
+			return (a.(uint8) < b.(uint8));
+		case uint16:
+			return (a.(uint16) < b.(uint16));
+		case uint32:
+			return (a.(uint32) < b.(uint32));
+		case uint64:
+			return (a.(uint64) < b.(uint64));
+		case int:
+			return (a.(int) < b.(int));
+		case uint:
+			return (a.(uint) < b.(uint));
+		case string:
+			return (a.(string) < b.(string));
+		case float32:
+			return (a.(float32) < b.(float32));
+		case float64:
+			return (a.(float64) < b.(float64));
+		default:
+			panic("IsLess(): can't compare a and b");
+	}
+}
+// compare a == b
+func IsEqual(a interface{}, b interface{})bool{
+	typeOfA := fmt.Sprintf("%T", a);
+	typeOfB := fmt.Sprintf("%T", b);
+	if(typeOfA != typeOfB){
+		panic("IsEqual(): types of a and b must be same");
+	}
+	switch (a).(type){
+		case int8:
+			return (a.(int8) == b.(int8));
+		case int16:
+			return (a.(int16) == b.(int16));
+		case int32:
+			return (a.(int32) == b.(int32));
+		case int64:
+			return (a.(int64) == b.(int64));
+		case uint8:
+			return (a.(uint8) == b.(uint8));
+		case uint16:
+			return (a.(uint16) == b.(uint16));
+		case uint32:
+			return (a.(uint32) == b.(uint32));
+		case uint64:
+			return (a.(uint64) == b.(uint64));
+		case int:
+			return (a.(int) == b.(int));
+		case uint:
+			return (a.(uint) == b.(uint));
+		case string:
+			return (a.(string) == b.(string));
+		case float32:
+			return (a.(float32) == b.(float32));
+		case float64:
+			return (a.(float64) == b.(float64));
+		default:
+			panic("IsEqual(): can't compare a and b");
+	}
+}
+// compare a <= b
+func IsLessE(a interface{}, b interface{})bool{
+	return (IsLess(a, b) || IsEqual(a, b));
+}
+// compare a > b
+func IsBig(a interface{}, b interface{})bool{
+	return (IsLessE(a, b) == false);
+}
+// compare a >= b
+func IsBigE(a interface{}, b interface{})bool{
+	return (IsLess(a, b) == false);
 }
 
 		/** EXTRA **/
